@@ -19,8 +19,7 @@ the right elements, it's time to learn how to:
 
 If you haven't already, fork and clone this lab into your local environment.
 Navigate into its directory in the terminal, then run `code .` to open the files
-in Visual Studio Code. Finally, run `npm install` to install the lab's
-dependencies.
+in Visual Studio Code.
 
 ## Create DOM Elements Programmatically
 
@@ -148,8 +147,8 @@ maintain.
 
 ## Change Properties on DOM Nodes
 
-We can change the appearance of a DOM node using its `style` attribute.
-Try this out in the console:
+We can change the appearance of a DOM node using its `style` attribute. Try this
+out in the console:
 
 ```js
 const element = document.getElementById("main");
@@ -168,8 +167,7 @@ Let's adjust the display. Add some text:
 element.textContent = "You've changed what's on the screen!";
 ```
 
-Then change the style to see the
-effect:
+Then change the style to see the effect:
 
 ```js
 element.style.fontSize = "24px";
@@ -236,7 +234,8 @@ remove an element from a page?
 
 ### `removeChild()`
 
-We use `removeChild()`, as you might guess, to remove a particular child of an element:
+We use `removeChild()`, as you might guess, to remove a particular child of an
+element:
 
 ```js
 someElement.removeChild(someChildElement);
@@ -275,24 +274,24 @@ represented in the DOM. Take a look at `test/indexTest.js` to see the tests'
 descriptions of the changes your code should be making to the DOM elements.
 
 Note that you do not need to create functions for this lab. Just create the line
-or lines of JavaScript necessary to pass each test. As usual, you will write your
-code in the `index.js` file.
+or lines of JavaScript necessary to pass each test. As usual, you will write
+your code in the `index.js` file.
 
-## Saving Your Work Remotely
+One final note: the last test in the `test/indexTest.js` file is looking for the
+text "YOUR-NAME is the champion" inside your newly created DOM node. While there
+are a number of ways you could accomplish this, you should use either the
+[`textContent`][mdn textcontent] or [`innerHTML`][mdn innerhtml] property to set
+the text inside your DOM node. The `innerText` property would technically work
+as well; however, the tests won't pass if you use this approach, and generally
+it's not a good practice to use `innerText` when setting the contents of an
+element. [This StackOverflow answer][so answer] does a good job explaining some
+differences between these properties.
 
-Currently, the work you've done on this assignment is only on your local
-machine. To preserve your solution on your GitHub fork, you will need to stage
-the changes you've made, commit them, and push the commit up to GitHub. Use the
-following commands to do this:
-
-```console
-$ git add .
-$ git commit -m "Completed assignment"
-$ git push
-```
-
-If you visit your fork on GitHub, you should now see that _you've_ made the most
-recent commit, and your code will be present in the files.
+[mdn textcontent]:
+  https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
+[mdn innerhtml]:
+  https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+[so answer]: https://stackoverflow.com/a/35213639
 
 ## Resources
 
@@ -303,4 +302,5 @@ recent commit, and your code will be present in the files.
 - [classList Property][classlist]
 
 [classlist]: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
-[code-injection]: https://www.reddit.com/r/learnjavascript/comments/9502x5/is_innerhtml_still_considered_bad/e3p31go/?utm_source=share&utm_medium=web2x&context=3
+[code-injection]:
+  https://www.reddit.com/r/learnjavascript/comments/9502x5/is_innerhtml_still_considered_bad/e3p31go/?utm_source=share&utm_medium=web2x&context=3
