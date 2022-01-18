@@ -1,7 +1,8 @@
-const main = document.querySelector("main");
-main.remove();
+const removeMain = document.getElementById("main");
+console.log(removeMain);
+removeMain.remove();
 
 const newHeader = document.createElement("h1");
 newHeader.id = "victory";
-newHeader.setAttribute = "h1#victory";
-newHeader.innerHTML = "Karsyn is the champion";
+newHeader.innerHTML = `Karsyn is the champion`;
+document.body.append(newHeader);
